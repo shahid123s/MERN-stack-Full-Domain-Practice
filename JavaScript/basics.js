@@ -127,3 +127,188 @@ function varExample() {
     }
     console.log(x);
 }
+// varExample();
+// Output:
+// 20
+// 20
+
+// Example of let
+function letExample() {
+    let x = 10;
+    if (true) {
+        let x = 20;
+        console.log(x);
+    }
+    console.log(x);
+}
+// letExample();
+// Output:
+// 20
+// 10
+
+// Example of const
+function constExample() {
+    const x = 10;
+    if (true) {
+        const x = 20;
+        console.log(x);
+    }
+    console.log(x);
+}
+// constExample();
+// Output:
+// 20 
+// 10
+
+// What is hoisting?
+// Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+// Example of hoisting
+
+function hoistingExample() {
+    console.log(x);
+    var x = 10;
+    console.log(x);
+}
+// hoistingExample();
+// Output:
+// undefined
+// 10
+
+// what is TDZ (Temporal Dead Zone) ? 
+// TDZ is a behavior in JavaScript where variables declared with let and const cannot be accessed before they are declared.
+
+// Example of TDZ
+function tdzExample() {
+    console.log(x);
+    let x = 10;
+    console.log(x);
+}
+// tdzExample();
+// Output:
+// ReferenceError: Cannot access 'x' before initialization
+
+// What is the difference between null and undefined?
+// null is an intentional absence of any object value, while undefined is a variable that has been declared but not assigned a value.
+
+// What is the difference between == and ===?
+// == is a loose equality operator that compares values after performing type coercion.
+// === is a strict equality operator that compares values without performing type coercion.
+
+// Example of ==
+
+console.log(1 == '1');
+// Output:
+// true
+
+// Example of ===
+
+console.log(1 === '1');
+// Output:
+// false
+
+// What is the difference between let and var?
+// let is block scoped, var is function scoped.
+
+// Example of let
+function letExample() {
+    let x = 10;
+    if (true) {
+        let x = 20;
+        console.log(x);
+    }
+    console.log(x);
+}
+// letExample();
+// Output:
+// 20
+// 10
+
+
+// Example of var
+function varExample() {
+    var x = 10;
+    if (true) {
+        var x = 20;
+        console.log(x);
+    }
+    console.log(x);
+}
+// varExample();
+// Output: 
+// 20
+// 20
+
+
+// What is the difference between a shallow copy and a deep copy?
+// A shallow copy creates a new object that is a copy of the original object, but does not create copies of nested objects.--- "passing by reference".
+// A deep copy creates a new object that is a copy of the original object, including all nested objects.--- "passing by value".
+
+
+// Example of shallow copy
+const originalObject = {
+    name: "John",
+    age: 30,
+    address: {
+        city: "New York",
+        state: "NY"
+    }
+};
+const shallowCopy = { ...originalObject };
+shallowCopy.name = "Jane";
+shallowCopy.address.city = "Los Angeles";
+console.log(originalObject);
+// Output:
+// {
+//     name: "John",    
+//     age: 30,
+//     address: {
+//         city: "Los Angeles",
+//         state: "NY"
+//     }
+// }
+
+// Example of deep copy
+const deepCopy = JSON.parse(JSON.stringify(originalObject));
+deepCopy.name = "Jane";
+deepCopy.address.city = "Los Angeles";
+console.log(originalObject);
+// Output:
+// {
+//     name: "John",
+//     age: 30,
+//     address: {
+//         city: "New York",
+//         state: "NY"
+//     }
+// }
+
+// What is the difference between a closure and a scope?
+// A closure is a function that has access to variables in its outer (enclosing) function's scope, even after the outer function has returned.
+// A scope is a region of code where variables are accessible.
+
+// Example of closure
+function closureExample() {
+    let x = 10;
+    function innerFunction() {
+        console.log(x);
+    }
+    return innerFunction;
+}
+
+const closure = closureExample();
+closure();
+// Output:
+// 10
+
+// Example of scope
+function scopeExample() {
+    let x = 10;
+    function innerFunction() {
+        console.log(x);
+    }
+    innerFunction();
+}
+// scopeExample();
+// Output:
+// 10
+
