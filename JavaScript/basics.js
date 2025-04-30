@@ -174,6 +174,30 @@ function hoistingExample() {
 // undefined
 // 10
 
+// What are the advantages and disadvantages of using hoisting?
+// // Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+// // Advantages:
+// // 1. Allows you to use variables and functions before they are declared.
+// // 2. Can help avoid errors in certain situations.
+// // 3. Makes code easier to read and understand.
+// // 4. Can improve performance in some cases.
+// // 5. Can help with code organization and structure.
+// // 6. Can help with variable scoping and closures.
+// // 7. Can help with code reusability and modularity.
+// // 8. Can help with code optimization and performance.
+// // 9. Can help with code maintainability and readability.
+// // Disadvantages:
+// // 1. Can lead to confusion and bugs if not understood properly.
+// // 2. Makes code less readable and maintainable.
+// // 3. Can cause unexpected behavior if not used carefully.
+// // 4. Can lead to performance issues in large codebases.
+// // 5. Can make debugging more difficult.
+// // 6. Can lead to variable shadowing and scope issues.
+// // 7. Can lead to variable hoisting issues.
+// // 8. Can lead to function hoisting issues.
+// // 9. Can lead to performance issues in large codebases.
+
+
 // what is TDZ (Temporal Dead Zone) ? 
 // TDZ is a behavior in JavaScript where variables declared with let and const cannot be accessed before they are declared.
 
@@ -311,4 +335,43 @@ function scopeExample() {
 // scopeExample();
 // Output:
 // 10
+
+
+
+
+// What is single thread and multi thread?
+// Single thread means that only one task can be executed at a time.
+// Multi thread means that multiple tasks can be executed at the same time.
+
+// Example of single thread
+function singleThreadExample() {
+    console.log("Start");
+    console.log("Middle");
+    console.log("End");
+}
+// singleThreadExample();
+// Output:
+// Start
+// Middle
+// End
+
+// Example of multi thread
+function multiThreadExample() {
+    console.log("Start");
+    setTimeout(() => {
+        console.log("Middle");
+    }, 2000);
+    console.log("End");
+}
+// multiThreadExample();
+// Output:]
+// Start
+// End
+// Middle
+
+// Is JavaScript single threaded or multi threaded?
+// JavaScript is single threaded, meaning it can only execute one task at a time.
+// However, it can handle asynchronous operations using callbacks, promises, and async/await.
+// This allows JavaScript to perform non-blocking I/O operations, making it efficient for handling multiple requests concurrently.
+// It also allows JavaScript to handle events and timers, which can be used to execute code at specific times or intervals.
 
